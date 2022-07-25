@@ -3,4 +3,4 @@ Write-Host ""
 Write-Host "Executing on $([Environment]::MachineName) - User $([Environment]::UserName)"
 Write-Host "Command Line: $([Environment]::CommandLine)"
 # Signal a good exit
-Exit 0
+Return 0
