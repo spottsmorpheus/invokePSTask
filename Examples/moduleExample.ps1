@@ -13,6 +13,8 @@ function Get-InstanceInfo {
     )
 
     Write-Host "This value of parameter Instance is $($Instance)"
+    Write-Host "Executing on $([Environment]::MachineName) - User $([Environment]::UserName)"
+ 
     return $Instance
 }
 
