@@ -12,13 +12,17 @@ function Get-InstanceInfo {
         [String]$Instance
     )
 
-    Write-Host "This value of parameter Instance is $($Instance)"
-    Write-Host "Executing on $([Environment]::MachineName) - User $([Environment]::UserName)"
+    # Trivial example creates an object whic will be returned
+    $InstanceInfo = @{
+        MorpheusInstance = $Instance;
+        MachineName = [Environment]::MachineName;
+        UserName = [Environment]::UserName
+    }
  
-    return $Instance
+    return $InstanceInfo
 }
 
-Write-Host "Loaded $($Title) - $($Version)" -ForegroundColor Green
+Write-Output "Loaded $($Title) - $($Version)" -ForegroundColor Green
 
 # Use Export-ModuleMember to be explicit about the functions and variables exported. 
 # By default all Functions are exported
